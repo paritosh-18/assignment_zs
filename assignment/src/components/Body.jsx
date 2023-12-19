@@ -4,7 +4,7 @@ import ItemBox from "./ItemBox";
 const data = new Array(100).fill().map((item, i) => (item = `item ${i}`));
 const newData = [];
 
-console.log(window.outerHeight);
+// console.log(window.outerHeight);
 let height = window.outerHeight;
 
 let num = 0;
@@ -27,7 +27,7 @@ const Body = () => {
   };
 
   const updateData2 = () => {
-    console.log(pos);
+    // console.log(pos);
     setData2(data.slice(0,pos));
   };
 
@@ -48,11 +48,10 @@ const Body = () => {
     for (let i = index; i < index + pos; i++) {
       newData[i] = data[i];
     }
-    console.log(getPos(height));
+    // console.log(getPos(height));
     setData2(newData);
     setIndex(index + pos);
   };
-  // className="bg-slate-200 h-screen"
   return (
     <div>
       <ul>
