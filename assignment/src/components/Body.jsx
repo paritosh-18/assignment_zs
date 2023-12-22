@@ -28,13 +28,18 @@ const Body = () => {
 
   const updateData2 = () => {
     // console.log(pos);
-    setData2(data.slice(0,pos));
+    setData2(data.slice(0, pos));
   };
 
   useEffect(() => {
+    let timeout = null;
     const handleResize = () => {
+      clearTimeout(timeout);
       setPos(getPos(window.outerHeight));
-      updateData2();
+
+      timeout = setTimeout(() => {
+        updateData2();
+      }, 250);
     };
 
     window.addEventListener("resize", () => handleResize());
